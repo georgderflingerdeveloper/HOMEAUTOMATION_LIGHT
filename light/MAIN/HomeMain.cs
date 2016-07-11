@@ -28,17 +28,16 @@ namespace HomeAutomation
     class MyHomeMain
     {
         #region COMMON_DECLARATIONS
-        static System.Timers.Timer           SelfTestTimer                   =  new System.Timers.Timer();
-        static System.Timers.Timer           CommTestTimer                   =  new System.Timers.Timer();
-        static System.Timers.Timer           FeedWatchDogTimer               =  new System.Timers.Timer( RaspberryPiConst.WatchdogIntervall );
-        static System.Timers.Timer           Timer_ClientInvitation          =  new System.Timers.Timer( Parameters.ClientInvitationIntervall );
-        static System.Timers.Timer           Timer_SendPeriodicDataToServer  =  new System.Timers.Timer( 1000 );
-        static System.Timers.Timer           Timer_SendPeriodicDataToClient  =  new System.Timers.Timer( 1000 );
+        static Timer                         SelfTestTimer                   =  new Timer();
+        static Timer                         CommTestTimer                   =  new Timer();
+        static Timer                         FeedWatchDogTimer               =  new Timer( RaspberryPiConst.WatchdogIntervall );
+        static Timer                         Timer_ClientInvitation          =  new Timer( Parameters.ClientInvitationIntervall );
+        static Timer                         Timer_SendPeriodicDataToServer  =  new Timer( 1000 );
+        static Timer                         Timer_SendPeriodicDataToClient  =  new Timer( 1000 );
         static BuildingSection               Roof;
         static Effects                       LightEffect;
         //static SleepingRoom                  MyHomeSleepingRoom;
         static SleepingRoomNG                  MyHomeSleepingRoom;
-        //static Center_kitchen_living_room_NG    MyHomeKitchenLivingRoom;
         static Center_kitchen_living_room_NG    MyHomeKitchenLivingRoom;
         static AnteRoom                      MyHomeAnteRoom;
         static ServerQueue                   TCPServer;
