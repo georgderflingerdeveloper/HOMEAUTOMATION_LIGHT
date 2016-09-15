@@ -1411,10 +1411,7 @@ namespace HomeAutomation
             {
                 AllOutputsOffTimer.Stop( );
                 AllOutputsOff( );
-                if( EReset != null )
-                {
-                    EReset( this );
-                }
+                EReset?.Invoke( this );
             }
 
             void AliveTimer_Elapsed( object sender, ElapsedEventArgs e )
@@ -1424,10 +1421,7 @@ namespace HomeAutomation
                     try
                     {
                         _DigitalOutput[CommonRoomIOAssignment.indOutputIsAlive] = !_DigitalOutput[CommonRoomIOAssignment.indOutputIsAlive];
-                        if( EUpdateOutputs != null )
-                        {
-                            EUpdateOutputs( this, _DigitalOutput );
-                        }
+                        EUpdateOutputs?.Invoke( this, _DigitalOutput );
                     }
                     catch
                     {
@@ -1512,7 +1506,7 @@ namespace HomeAutomation
                 // PUSH BUTTON 
                 if( cmd == true )
                 {
-                    base.StartAllTimers( );
+                    StartAllTimers( );
                     if( SomeRoomLightsAreOn )
                     {
                         TurnAllLightsOff( _startindex, _lastindex );
