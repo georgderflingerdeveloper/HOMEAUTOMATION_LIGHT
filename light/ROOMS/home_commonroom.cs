@@ -66,10 +66,10 @@ namespace HomeAutomation
             {
                 try
                 {
-                    base.open( );
+                    base.open();
                     Console.WriteLine( TimeUtil.GetTimestamp( ) + " " +  "Waiting for InterfaceKit to be attached..." );
-                    base.waitForAttachment( Parameters.AttachWaitTime );
-                    base.InputChange += BuildingSection_InputChange;
+                    base.waitForAttachment( Parameters.AttachWaitTime ); //
+                    base.InputChange  += BuildingSection_InputChange;
                     base.OutputChange += BuildingSection_OutputChange;
                 }
                 catch( PhidgetException phiex_ )
@@ -86,6 +86,10 @@ namespace HomeAutomation
                     Console.WriteLine( TimeUtil.GetTimestamp( ) + " " + "Attached IO Card   TYPE:" + base.Type.ToString( ) );
                     Console.WriteLine( TimeUtil.GetTimestamp( ) + " " + "Attached IO Card SERIAL:" + base.SerialNumber.ToString( ) );
                     _PrimaryIOCardIsAttached = true;
+                }
+                else
+                {
+                    Console.WriteLine(TimeUtil.GetTimestamp() + " " + "Attaching so far not confirmed");
                 }
 
                 BlinkOnOffTimer = new Timer( );
