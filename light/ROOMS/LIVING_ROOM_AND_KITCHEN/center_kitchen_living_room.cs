@@ -1293,15 +1293,6 @@ namespace HomeAutomation
                    case KitchenIOAssignment.indKitchenMainButton:
                         HeatersLivingRoom?.HeaterOn( Value ); // heaters can be switched on / off with the light button
                         break;
-                   // heater in the ante room so far is controlled by center/kitchen/living room sbc
-                   // reason is that the cable conneting the actuator was easier to lay 
-                   case CenterButtonRelayIOAssignment.indDigitalInputRelayAnteRoom:
-                        HeaterAnteRoom?.HeaterOnFallingEdge( Value );
-                        if( Value )
-                        {
-                            HeaterKidsRoom?.TurnHeaterOnOffWithCounts( );
-                        }
-                        break;
 
                     default:
                         break;
