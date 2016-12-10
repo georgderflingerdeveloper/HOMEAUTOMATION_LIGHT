@@ -862,7 +862,6 @@ namespace HomeAutomation
         LightControl_NG                      Outside;
         HeaterElement_NG                     HeatersLivingRoom;
         HeaterElement_NG                     HeaterAnteRoom;
-        HeaterElementAnalog                  HeaterKidsRoom;
         CentralControlledElements_NG         FanWashRoom;
         CentralControlledElements_NG         CirculationPump;
         BasicClientComumnicator              BasicClientCommunicator_;
@@ -936,16 +935,6 @@ namespace HomeAutomation
                 
                 HeaterAnteRoom.Match = new List<int> { AnteRoomIODeviceIndices.indDigitalOutputAnteRoomHeater };
 
-                HeaterKidsRoom = new HeaterElementAnalog(
-                                         ParametersHeaterControl.TimeDemandForHeatersOnOffLonger,
-                                         ParametersHeaterControl.TimeDemandForHeatersAutomaticOffBig,
-                                         ParametersHeaterControlLivingRoom.TimeDemandForHeatersOnMiddle,
-                                         ParametersHeaterControlLivingRoom.TimeDemandForHeatersOffMiddle,
-                                         KidsRoomIODeviceIndices.indDigitalOutputHeater,
-                                         KidsRoomIODeviceIndices.indDigitalOutputHeater );
-                HeaterKidsRoom.Match = new List<int> { KidsRoomIODeviceIndices.indDigitalOutputHeater };
-                HeaterKidsRoom.ConfigOnOffCount( KidsRoomConfiguration.PushPullCountsTurnHeaterOnOff, KidsRoomConfiguration.TimeWindowTurnHeatersOnOff );
-
                 FanWashRoom = new CentralControlledElements_NG(
                                          ParametersWashRoomControl.TimeDemandForFanOn,
                                          ParametersWashRoomControl.TimeDemandForFanAutomaticOff,
@@ -965,7 +954,6 @@ namespace HomeAutomation
             Kitchen.EUpdateOutputs_           += EShowUpdatedOutputs;
             HeatersLivingRoom.EUpdateOutputs_ += EShowUpdatedOutputs;
             HeaterAnteRoom.EUpdateOutputs_    += EShowUpdatedOutputs;
-            HeaterKidsRoom.EUpdateOutputs_    += EShowUpdatedOutputs;
             FanWashRoom.EUpdateOutputs_       += EShowUpdatedOutputs;
             CirculationPump.EUpdateOutputs_   += EShowUpdatedOutputs;
             #endregion
@@ -1346,14 +1334,14 @@ namespace HomeAutomation
         {
             if( ToggleHeatersOnOff == 0 )
             {
-                Kitchen.AnyExternalDeviceOn = true;
+                Kitchen.AnyExternalDeviceOn  = true;
                 Kitchen.AnyExternalDeviceOff = false;
             }
             ToggleHeatersOnOff++;
             if( ToggleHeatersOnOff > 1 )
             {
-                ToggleHeatersOnOff = 0;
-                Kitchen.AnyExternalDeviceOn = false;
+                ToggleHeatersOnOff           = 0;
+                Kitchen.AnyExternalDeviceOn  = false;
                 Kitchen.AnyExternalDeviceOff = true;
             }
         }

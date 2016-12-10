@@ -121,7 +121,7 @@
     <Compile Include="BASIC_COMPONENTS\timerMockable.cs" />
     <Compile Include="BASIC_CONTROL_LOGIC\unittest_devicestepcontrol.cs" />
     <Compile Include="ROOMS\anteroom_bathroom_washroom.cs" />
-    <Compile Include="ROOMS\center_kitchen_living_room.cs" />
+    <Compile Include="ROOMS\LIVING_ROOM_AND_KITCHEN\center_kitchen_living_room.cs" />
     <Compile Include="HA_SERVICES\feed_home_scheduler.cs" />
     <Compile Include="APPLICATION_SERVICES\GlobalSuppressions.cs" />
     <Compile Include="BASIC_CONTROL_LOGIC\hacontrols.cs" />
@@ -167,7 +167,9 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ROOMS\LIVING_ROOM_AND_KITCHEN\UNIT_TEST\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
