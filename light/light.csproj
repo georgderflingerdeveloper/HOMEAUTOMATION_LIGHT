@@ -138,6 +138,7 @@
     <Compile Include="IO_CONTROL\phidgetshelpers.cs" />
     <Compile Include="MAIN\HomeMain.cs" />
     <Compile Include="HA_SERVICES\SchedulerApplicationSpecifics.cs" />
+    <Compile Include="ROOMS\LIVING_ROOM_AND_KITCHEN\UNIT_TEST\center_kitchen_living_room_unit_test.cs" />
     <Compile Include="ROOMS\sleepingroom.cs" />
     <Compile Include="HA_INFORMATION_COMPONENTS\WindowDoorsObserver.cs" />
   </ItemGroup>
@@ -167,9 +168,7 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ROOMS\LIVING_ROOM_AND_KITCHEN\UNIT_TEST\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

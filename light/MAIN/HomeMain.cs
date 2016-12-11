@@ -171,7 +171,6 @@ namespace HomeAutomation
                          break;
                     #endregion
 
-
                     default:
                          Console.WriteLine( TimeUtil.GetTimestamp() + Seperators.Spaceholder + InfoString.InfoIniDidNotFindProperConfiguration );
                          Console.ReadLine( );
@@ -268,8 +267,6 @@ namespace HomeAutomation
                         break;
 
                 #endregion
-
-
             }
             Environment.Exit( 0 );
         }
@@ -346,7 +343,6 @@ namespace HomeAutomation
         {
             Console.WriteLine( "Feed Watchdog " + DateTime.Now.ToString() );
         }
-
  
         static void Client__MessageReceivedFromServer ( string receivedmessage )
         {
@@ -379,7 +375,5 @@ namespace HomeAutomation
         #endregion
 
         #endregion  // MAIN
-
-
     }
 }
